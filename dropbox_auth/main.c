@@ -32,7 +32,7 @@ int main(void)
 		curl_easy_setopt(curl, CURLOPT_POSTFIELDS, data);
 
 		// append all header
-		chunk = curl_slist_append(chunk, "Authorization: Bearer <TOKEN_HERE>");
+		chunk = curl_slist_append(chunk, "Authorization: Bearer _G3bZFuCKiAAAAAAAAAADbubss3eXFcWBIJb5awT7_zNVKUuh68WHN_G8BHsPbpc");
 		chunk = curl_slist_append(chunk, filename_request);
 		chunk = curl_slist_append(chunk, "Content-Type: application/octet-stream");
 		curl_easy_setopt(curl, CURLOPT_HTTPHEADER, chunk);
@@ -50,6 +50,7 @@ int main(void)
     	curl_easy_cleanup(curl);
   	}
   	curl_global_cleanup();
+	 curl_slist_free_all(chunk);
 
 	free(filename_request);
   	return 0;
