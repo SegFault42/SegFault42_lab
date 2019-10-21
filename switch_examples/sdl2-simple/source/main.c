@@ -29,7 +29,7 @@ int main(void)
 		return (-1);
 	}
 
-	SDL_Surface * image = IMG_Load("/MARBLES.PPM");
+	SDL_Surface * image = IMG_Load("/image.ppm");
 	if (image == NULL) {
 		IMG_Quit();
 		SDL_Quit();
