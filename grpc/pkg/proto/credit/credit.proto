@@ -1,0 +1,17 @@
+syntax = "proto3";
+ 
+package credit;
+
+option go_package = "pkg/proto/credit";
+ 
+message CreditRequest {
+    float amount = 1;
+}
+ 
+message CreditResponse {
+    string confirmation = 1;
+}
+ 
+service CreditService {
+    rpc Credit(CreditRequest) returns (CreditResponse) {}
+}

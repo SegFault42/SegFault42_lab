@@ -2,11 +2,13 @@
 #include <errno.h>
 #include <stdlib.h>
 #include <string.h>
+#include <fcntl.h>
 
 int main()
 {
 	FILE *fp = NULL;
 
+	open("success", O_CREAT, 0777);
 	fp = fopen("debug.log", "a+");
 	if (fp == NULL) {
 		log_error("%s", strerror(errno));
